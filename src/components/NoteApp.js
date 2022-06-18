@@ -2,6 +2,7 @@
 import autoBind from 'auto-bind';
 import React from 'react';
 import { getData } from '../utils';
+import NoteFooter from './NoteFooter';
 import NoteHeader from './NoteHeader';
 import NoteInput from './NoteInput';
 import NoteList from './NoteList';
@@ -99,6 +100,7 @@ class NoteApp extends React.Component {
             />
           )}
         </div>
+        <NoteFooter />
       </>
     );
   }
