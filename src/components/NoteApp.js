@@ -1,7 +1,6 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
 import { getData } from '../utils';
-import NoteArchive from './NoteArchive';
 import NoteHeader from './NoteHeader';
 import NoteInput from './NoteInput';
 import NoteList from './NoteList';
@@ -94,7 +93,7 @@ class NoteApp extends React.Component {
           0 ? (
             <p className='note-item__empty-message'>No notes yet</p>
           ) : (
-            <NoteArchive
+            <NoteList
               notes={this.state.notes.filter((note) => note.archived === true)}
               onArchive={this.onArchiveNoteEventHandler}
               onDelete={this.onDeleteNoteEventHandler}

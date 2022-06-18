@@ -104,8 +104,7 @@ form button:hover {
 }
 
 /* Note List */
-.note-list,
-.note-archive {
+.note-list {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
@@ -205,8 +204,7 @@ form button:hover {
 
 /* Responsive */
 @media (min-width: 576px) {
-  .note-list,
-  .note-archive {
+  .note-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -228,8 +226,7 @@ form button:hover {
 }
 
 @media (min-width: 992px) {
-  .note-list,
-  .note-archive {
+  .note-list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -243,8 +240,7 @@ form button:hover {
     padding: 200px 80px;
   }
 
-  .note-list,
-  .note-archive {
+  .note-list {
     grid-template-columns: repeat(4, 1fr);
   }
 }
