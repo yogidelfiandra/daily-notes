@@ -1,4 +1,5 @@
 /* eslint-disable no-restricted-globals */
+import autoBind from 'auto-bind';
 import React from 'react';
 import { getData } from '../utils';
 import NoteHeader from './NoteHeader';
@@ -14,10 +15,7 @@ class NoteApp extends React.Component {
       query: '',
     };
 
-    this.onAddNoteEventHandler = this.onAddNoteEventHandler.bind(this);
-    this.onDeleteNoteEventHandler = this.onDeleteNoteEventHandler.bind(this);
-    this.onArchiveNoteEventHandler = this.onArchiveNoteEventHandler.bind(this);
-    this.onSearchNoteEventHandler = this.onSearchNoteEventHandler.bind(this);
+    autoBind(this);
   }
 
   onAddNoteEventHandler({ title, body }) {

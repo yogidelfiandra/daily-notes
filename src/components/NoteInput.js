@@ -1,4 +1,5 @@
 /* eslint-disable no-restricted-globals */
+import autoBind from 'auto-bind';
 import React from 'react';
 
 class NoteInput extends React.Component {
@@ -11,9 +12,7 @@ class NoteInput extends React.Component {
       maxText: 50,
     };
 
-    this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
-    this.onBodyChangeEventHandler = this.onBodyChangeEventHandler.bind(this);
-    this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
+    autoBind(this);
   }
 
   onTitleChangeEventHandler(event) {
