@@ -1,4 +1,5 @@
 /* eslint-disable no-restricted-globals */
+
 import autoBind from 'auto-bind';
 import React from 'react';
 
@@ -40,12 +41,21 @@ class NoteInput extends React.Component {
 
   onSubmitEventHandler(event) {
     event.preventDefault();
+
     const postNote = confirm('Are you sure you want to add this note?');
 
     if (postNote) {
-      this.props.addNote(this.state);
-      const message = 'Note has been added.';
-      alert(message);
+      if (this.state.title.length === 0 && this.state.body.length === 0) {
+        alert('title and note are required');
+      } else if (this.state.title.length === 0) {
+        alert('title is required');
+      } else if (this.state.body.length === 0) {
+        alert('note is required');
+      } else {
+        this.props.addNote(this.state);
+        const message = 'Note has been added.';
+        alert(message);
+      }
     } else {
       alert('Alright, just stay here okay');
     }
