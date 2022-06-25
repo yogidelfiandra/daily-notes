@@ -11,7 +11,7 @@ function NoteItem({
   archived,
 }) {
   return (
-    <div className='note-item'>
+    <article className='note-item'>
       <NoteItemContent title={title} body={body} />
       <NoteItemFooter
         createdAt={createdAt}
@@ -20,7 +20,7 @@ function NoteItem({
         onDelete={onDelete}
         onArchive={onArchive}
       />
-    </div>
+    </article>
   );
 }
 

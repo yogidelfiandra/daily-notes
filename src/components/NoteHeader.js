@@ -2,7 +2,7 @@ import { HiSearch } from 'react-icons/hi';
 
 function NoteHeader({ query, onSearch }) {
   return (
-    <div className='note-app__header'>
+    <header className='note-app__header'>
       <h1>Daily Notes</h1>
       <div className='note-search'>
         <HiSearch size={16} />
@@ -13,7 +13,7 @@ function NoteHeader({ query, onSearch }) {
           onChange={onSearch}
         />
       </div>
-    </div>
+    </header>
   );
 }
 

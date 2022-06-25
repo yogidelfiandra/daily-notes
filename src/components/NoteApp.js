@@ -71,35 +71,43 @@ class NoteApp extends React.Component {
           onSearch={this.onSearchNoteEventHandler}
           query={this.state.query}
         />
-        <div className='note-app'>
-          <NoteInput addNote={this.onAddNoteEventHandler} />
-          <h2 className='subtitle subtitle-h3'>My Notes</h2>
+        <main>
+          <div className='note-app' id='content'>
+            <NoteInput addNote={this.onAddNoteEventHandler} />
 
-          {this.state.notes.filter((note) => note.archived === false).length ===
-          0 ? (
-            <p className='note-item__empty-message'>No notes yet</p>
-          ) : (
-            <NoteList
-              notes={this.state.notes.filter((note) => note.archived === false)}
-              onDelete={this.onDeleteNoteEventHandler}
-              onArchive={this.onArchiveNoteEventHandler}
-              query={this.state.query}
-            />
-          )}
+            <h2 className='subtitle subtitle-h3'>My Notes</h2>
 
-          <h2 className='subtitle subtitle-h3'>Archived</h2>
-          {this.state.notes.filter((note) => note.archived === true).length ===
-          0 ? (
-            <p className='note-item__empty-message'>No notes yet</p>
-          ) : (
-            <NoteList
-              notes={this.state.notes.filter((note) => note.archived === true)}
-              onArchive={this.onArchiveNoteEventHandler}
-              onDelete={this.onDeleteNoteEventHandler}
-              query={this.state.query}
-            />
-          )}
-        </div>
+            {this.state.notes.filter((note) => note.archived === false)
+              .length === 0 ? (
+              <p className='note-item__empty-message'>No notes yet</p>
+            ) : (
+              <NoteList
+                notes={this.state.notes.filter(
+                  (note) => note.archived === false
+                )}
+                onDelete={this.onDeleteNoteEventHandler}
+                onArchive={this.onArchiveNoteEventHandler}
+                query={this.state.query}
+              />
+            )}
+
+            <h2 className='subtitle subtitle-h3'>Archived</h2>
+
+            {this.state.notes.filter((note) => note.archived === true)
+              .length === 0 ? (
+              <p className='note-item__empty-message'>No notes yet</p>
+            ) : (
+              <NoteList
+                notes={this.state.notes.filter(
+                  (note) => note.archived === true
+                )}
+                onArchive={this.onArchiveNoteEventHandler}
+                onDelete={this.onDeleteNoteEventHandler}
+                query={this.state.query}
+              />
+            )}
+          </div>
+        </main>
         <NoteFooter />
       </>
     );

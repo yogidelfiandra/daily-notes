@@ -55,6 +55,10 @@ class NoteInput extends React.Component {
         this.props.addNote(this.state);
         const message = 'Note has been added.';
         alert(message);
+        this.setState({
+          title: '',
+          body: '',
+        });
       }
     } else {
       alert('Alright, just stay here okay');
